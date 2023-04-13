@@ -1,6 +1,7 @@
 <?php
 
-use App\Http\Controllers\TweetController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\BlogController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -29,9 +30,10 @@ Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::resource('Tweets', TweetController::class) 
+Route::resource('blogs', BlogController::class)
     ->only(['index', 'store'])
     ->middleware(['auth', 'verified']);
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

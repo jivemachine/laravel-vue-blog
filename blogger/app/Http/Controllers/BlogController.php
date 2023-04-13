@@ -2,17 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Tweet;
+use App\Models\Blog;
 use Illuminate\Http\Request;
+use Inertia\Inertia;
+use Inertia\Response;
 
-class TweetController extends Controller
+class BlogController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(): Response
     {
-        //
+        return Inertia::render('Blogs/Index', [
+            //
+        ]);
     }
 
     /**
@@ -34,7 +38,7 @@ class TweetController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Tweet $tweet)
+    public function show(Blog $blog)
     {
         //
     }
@@ -42,7 +46,7 @@ class TweetController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Tweet $tweet)
+    public function edit(Blog $blog)
     {
         //
     }
@@ -50,7 +54,7 @@ class TweetController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Tweet $tweet)
+    public function update(Request $request, Blog $blog)
     {
         //
     }
@@ -58,7 +62,7 @@ class TweetController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Tweet $tweet)
+    public function destroy(Blog $blog)
     {
         //
     }
